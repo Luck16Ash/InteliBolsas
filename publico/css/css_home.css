@@ -1,0 +1,278 @@
+/* ======= CORES BASE ======= */
+:root {
+  --intelibolsas-blue-light: #E3F2FD;
+  --intelibolsas-blue: #5DADE2;
+  --intelibolsas-blue-medium: #3498DB;
+  --intelibolsas-darkblue: #1B4F72;
+  --intelibolsas-light: #FFFFFF;
+  --intelibolsas-accent: #85C1E9;
+  --intelibolsas-light-gray: #E1EBF5;
+}
+
+/* ======= ESTILO GERAL ======= */
+body {
+  background-color: var(--intelibolsas-light-gray);
+  /* Certifique-se de que a fonte 'Poppins' está carregada em css_global.css ou no head do HTML */
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--intelibolsas-darkblue);
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Adicionado para prevenir barra de rolagem horizontal em mobile */
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+  background-color: var(--intelibolsas-light) !important; /* Força o uso da cor light */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.logo-navbar {
+  height: 50px;
+  width: auto;
+}
+.navbar-nav .nav-link {
+  font-size: 17px;
+  margin-right: 18px;
+  color: var(--intelibolsas-darkblue);
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--intelibolsas-blue-medium);
+  font-weight: 600;
+}
+.navbar .btn-success {
+  background-color: var(--intelibolsas-blue-medium);
+  border: none;
+  padding: 8px 20px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.navbar .btn-success:hover {
+  background-color: #2980B9;
+  transform: translateY(-2px);
+}
+.navbar .btn-danger {
+  padding: 8px 20px;
+  font-weight: 700;
+}
+
+
+/* ======= HEADER COM LUMINÁRIA (APRESENTAÇÃO) ======= */
+.fundo {
+  /* Garante o full width */
+  width: 100%; 
+  /* Altura mínima para mobile e desktop */
+  min-height: 90vh; 
+  /* Gradient e Animação */
+  background: linear-gradient(270deg, 
+    var(--intelibolsas-blue-light), 
+    var(--intelibolsas-accent), 
+    var(--intelibolsas-blue-medium), 
+    var(--intelibolsas-blue)
+  );
+  background-size: 800% 800%;
+  animation: luminariaHeader 6s ease-in-out infinite alternate; /* Alterado para infinite alternate */
+  border-radius: 0 0 60px 60px;
+  padding: 100px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: var(--intelibolsas-light);
+}
+
+/* A animação agora faz um loop suave */
+@keyframes luminariaHeader {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.TextoPrincipal {
+  font-size: 42px;
+  color: var(--intelibolsas-light);
+  font-weight: 700;
+  margin: 0 auto 15px auto;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  /* Removido white-space: nowrap para permitir quebra de linha em mobile */
+}
+.SubTexto {
+  font-size: 20px;
+  color: #e0f0f5;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* ======= PESQUISA ======= */
+/* Ajuste para alinhar o input de busca (form já usa d-flex do Bootstrap) */
+#formBusca {
+    margin-top: -80px; /* Traz a busca para cima, sobrepondo o footer do header */
+    position: relative;
+    z-index: 10;
+    background-color: var(--intelibolsas-light) !important;
+    border-radius: 12px;
+    padding: 15px !important;
+}
+
+
+/* ======= BOTÃO CTA ======= */
+.fundo .btn-primary {
+  background: linear-gradient(90deg, var(--intelibolsas-blue-medium), var(--intelibolsas-blue));
+  background-size: 200% 200%;
+  animation: gradBtn 4s ease infinite;
+  color: var(--intelibolsas-light);
+  border: none;
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+@keyframes gradBtn {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.fundo .btn-primary:hover {
+  transform: scale(1.05); /* Escala menor para hover do botão */
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ======= MASCOTE ======= */
+.mascote {
+  background-color: transparent;
+  border: 3px solid var(--intelibolsas-darkblue);
+  max-width: 220px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+  animation: flutuar 3s ease-in-out infinite alternate;
+  transition: transform 0.3s ease-in-out;
+}
+/* O hover do mascote é gerenciado pelo JS */
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ======= SEÇÃO QUEM SOMOS ======= */
+.Caixa {
+  background-color: var(--intelibolsas-light);
+  border-radius: 20px;
+  text-align: center;
+  padding: 50px 30px;
+  /* Removido max-width e margin para depender 100% do container Bootstrap */
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+}
+.Caixa h2 {
+  color: var(--intelibolsas-darkblue);
+  margin-bottom: 20px;
+}
+.Caixa p {
+  color: var(--intelibolsas-darkblue);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.logo-secundario {
+  display: block;
+  margin: 20px auto 0 auto;
+  max-width: 160px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.logo-secundario:hover { transform: scale(1.05); }
+
+/* ======= CARDS DE OPORTUNIDADES ======= */
+.card {
+  border: none;
+  border-radius: 18px;
+  background: var(--intelibolsas-light); /* Fundo branco ou claro para melhor contraste */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  /* A transição será aplicada nas sub-cores */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover mais discreto para melhor usabilidade */
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+.card-body { padding: 25px; }
+.card-title {
+  color: var(--intelibolsas-darkblue);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.card-text { 
+    color: var(--intelibolsas-darkblue); 
+    font-size: 16px; 
+    margin-bottom: 20px; 
+}
+/* Estilo do botão do card para combinar com o tema */
+.card .btn-primary {
+  border-radius: 25px;
+  font-size: 15px;
+  transition: all 0.25s ease-in-out;
+  background-color: var(--intelibolsas-blue-medium);
+  border-color: var(--intelibolsas-blue-medium);
+}
+.card .btn-primary:hover {
+  background-color: var(--intelibolsas-darkblue);
+  border-color: var(--intelibolsas-darkblue);
+  transform: translateY(-2px);
+}
+
+/* ======= RODAPÉ ======= */
+.Contatos {
+  background-color: var(--intelibolsas-darkblue);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid var(--intelibolsas-blue-medium);
+}
+.Contatos span {
+  color: var(--intelibolsas-light);
+  font-size: 17px;
+  display: block;
+  margin: 8px 0;
+}
+.Contatos span:first-child,
+.Contatos span:last-child {
+  color: var(--intelibolsas-blue-medium);
+  font-weight: 600;
+}
+
+/* ======= LINKS ======= */
+a[href] {
+    color: var(--intelibolsas-darkblue);
+    text-decoration: none;
+}
+a[href]:hover {
+  color: var(--intelibolsas-blue-medium);
+  text-decoration: none;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media screen and (max-width: 992px) {
+    /* Diminui o texto principal em telas menores que desktop */
+    .TextoPrincipal { font-size: 36px; }
+}
+
+@media screen and (max-width: 768px) {
+  .TextoPrincipal { font-size: 28px; white-space: normal; }
+  .SubTexto { font-size: 16px; }
+  .mascote { max-width: 160px; }
+  .Caixa { padding: 30px 20px; }
+  .navbar-nav .nav-link { margin-right: 0; }
+  #formBusca { margin-top: -40px; } /* Ajusta a posição da busca em mobile */
+}
+
+@media screen and (max-width: 576px) {
+    .TextoPrincipal { font-size: 24px; }
+    .fundo { padding: 50px 10px; }
+    .Contatos .col-md-4 { margin-bottom: 10px; }
+}

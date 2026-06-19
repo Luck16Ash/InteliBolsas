@@ -1,0 +1,229 @@
+/* ======= CORES BASE ======= */
+:root {
+  --intelibolsas-blue-light: #E3F2FD;
+  --intelibolsas-blue: #5DADE2;
+  --intelibolsas-blue-medium: #3498DB;
+  --intelibolsas-darkblue: #1B4F72;
+  --intelibolsas-light: #FFFFFF;
+  --intelibolsas-accent: #85C1E9;
+  --intelibolsas-light-gray: #E1EBF5;
+}
+
+/* ======= ESTILO GERAL ======= */
+body {
+  background-color: var(--intelibolsas-light-gray);
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--intelibolsas-darkblue);
+  scroll-behavior: smooth;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+  background-color: var(--intelibolsas-light);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.logo-navbar {
+  height: 50px;
+  width: auto;
+}
+.navbar-nav .nav-link {
+  font-size: 17px;
+  margin-right: 18px;
+  color: var(--intelibolsas-darkblue);
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--intelibolsas-blue-medium);
+  font-weight: 600;
+}
+.navbar .btn-success {
+  background-color: var(--intelibolsas-blue-medium);
+  border: none;
+  padding: 8px 20px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.navbar .btn-success:hover {
+  background-color: #2980B9;
+  transform: translateY(-2px);
+}
+
+/* ======= HEADER COM LUMINÁRIA ======= */
+.fundo {
+  background: linear-gradient(270deg, 
+    var(--intelibolsas-blue-light), 
+    var(--intelibolsas-accent), 
+    var(--intelibolsas-blue-medium), 
+    var(--intelibolsas-blue)
+  );
+  background-size: 800% 800%;
+  animation: luminariaHeader 6s ease-in-out forwards;
+  border-radius: 0 0 60px 60px;
+  padding: 100px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: var(--intelibolsas-light);
+}
+@keyframes luminariaHeader {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.TextoPrincipal {
+  font-size: 42px;
+  color: var(--intelibolsas-light);
+  font-weight: 700;
+  margin: 0 auto 15px auto;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  white-space: nowrap;
+}
+.SubTexto {
+  font-size: 20px;
+  color: #e0f0f5;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* ======= BOTÃO CTA ======= */
+.fundo .btn-primary {
+  background: linear-gradient(90deg, var(--intelibolsas-blue-medium), var(--intelibolsas-blue));
+  background-size: 200% 200%;
+  animation: gradBtn 4s ease infinite;
+  color: var(--intelibolsas-light);
+  border: none;
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+@keyframes gradBtn {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.fundo .btn-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ======= MASCOTE ======= */
+.mascote {
+  background-color: transparent;
+  border: 3px solid var(--intelibolsas-darkblue);
+  max-width: 220px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+  animation: flutuar 3s ease-in-out infinite alternate;
+  transition: transform 0.3s ease-in-out;
+}
+.mascote:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.35);
+}
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ======= SEÇÃO QUEM SOMOS ======= */
+.Caixa {
+  background-color: var(--intelibolsas-light);
+  border-radius: 20px;
+  text-align: center;
+  padding: 50px 30px;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+}
+.Caixa h2 {
+  color: var(--intelibolsas-darkblue);
+  margin-bottom: 20px;
+}
+.Caixa p {
+  color: var(--intelibolsas-darkblue);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.logo-secundario {
+  display: block;
+  margin: 20px auto 0 auto;
+  max-width: 160px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.logo-secundario:hover { transform: scale(1.05); }
+
+/* ======= CARDS ======= */
+.card {
+  border: none;
+  border-radius: 18px;
+  background: var(--intelibolsas-blue-light);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px) rotateZ(1deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, var(--intelibolsas-blue-medium), var(--intelibolsas-accent));
+  color: var(--intelibolsas-light);
+}
+.card-body { padding: 25px; }
+.card-title {
+  color: var(--intelibolsas-darkblue);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.card-text { color: var(--intelibolsas-darkblue); font-size: 16px; margin-bottom: 20px; }
+.card .btn-outline-primary {
+  border-radius: 25px;
+  font-size: 15px;
+  transition: all 0.25s ease-in-out;
+  border-color: var(--intelibolsas-blue-medium);
+  color: var(--intelibolsas-darkblue);
+}
+.card .btn-outline-primary:hover {
+  background-color: var(--intelibolsas-blue-medium);
+  border-color: var(--intelibolsas-blue-medium);
+  color: var(--intelibolsas-light);
+  transform: translateY(-2px);
+}
+
+/* ======= RODAPÉ ======= */
+.Contatos {
+  background-color: var(--intelibolsas-darkblue);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid var(--intelibolsas-blue-medium);
+}
+.Contatos span {
+  color: var(--intelibolsas-light);
+  font-size: 17px;
+  display: block;
+  margin: 8px 0;
+}
+.Contatos span:first-child,
+.Contatos span:last-child {
+  color: var(--intelibolsas-blue-medium);
+  font-weight: 600;
+}
+
+/* ======= LINKS ======= */
+a[href]:hover {
+  color: var(--intelibolsas-blue-medium);
+  text-decoration: none;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media screen and (max-width: 768px) {
+  .TextoPrincipal { font-size: 28px; white-space: normal; }
+  .SubTexto { font-size: 16px; }
+  .mascote { max-width: 160px; }
+  .Caixa { padding: 30px 20px; }
+}
